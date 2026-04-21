@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Dynamics Playground</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="playground.html">Optimization</a>
+        <a href="fitting.html">Function Learning</a>
+    </nav>
+
+    <div class="main-content">
+        <div class="container">
+            <h1>Learning Dynamics Playground</h1>
+
+            <div class="card">
+                <h2>Welcome to Interactive Learning</h2>
+                <p>Explore gradient descent optimization and neural network learning through interactive visualizations.</p>
+
+                <div class="features">
+                    <h3>Features:</h3>
+                    <ul>
+                        <li><strong>Optimization Playground:</strong> Watch gradient descent converge to minima on various functions</li>
+                        <li><strong>Function Learning:</strong> See how a single neuron learns to approximate target functions</li>
+                        <li><strong>Interactive Controls:</strong> Adjust learning rates and observe real-time behavior</li>
+                        <li><strong>Mathematical Explanations:</strong> Clear explanations of the underlying algorithms</li>
+                    </ul>
+                </div>
+
+                <div class="getting-started">
+                    <h3>Getting Started:</h3>
+                    <p>Navigate to the Optimization page to see gradient descent in action, or the Function Learning page to understand how neural networks learn through parameter adjustment.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <h3>About This Project</h3>
+        <p>This educational platform demonstrates fundamental concepts in machine learning and optimization through interactive visualizations.</p>
+
+        <h3>Key Concepts</h3>
+        <ul>
+            <li><strong>Gradient Descent:</strong> Iterative optimization algorithm</li>
+            <li><strong>Loss Functions:</strong> Measure of how wrong a prediction is</li>
+            <li><strong>Neural Networks:</strong> Mathematical models that learn from data</li>
+            <li><strong>Parameter Learning:</strong> Adjusting weights to minimize error</li>
+        </ul>
+    </div>
+
+    <script>
+        // Navbar active highlighting
+        document.querySelectorAll('nav a').forEach(link => {
+            if (link.getAttribute('href') === window.location.pathname.split('/').pop()) {
+                link.style.fontWeight = 'bold';
+                link.style.textDecoration = 'underline';
+            }
+        });
+    </script>
+</body>
+</html>

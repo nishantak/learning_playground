@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimization Playground</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="playground.html" style="font-weight: bold; text-decoration: underline;">Optimization</a>
+        <a href="fitting.html">Function Learning</a>
+    </nav>
+
+    <div class="main-content">
+        <div class="container">
+            <h1>Optimization Playground</h1>
+
+            <div class="card">
+                <h2>Loss Landscape</h2>
+                <p>Watch gradient descent find minima on different functions</p>
+
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="function-select">Function:</label>
+                        <select id="function-select">
+                            <option value="quadratic">Quadratic: f(x) = x²</option>
+                            <option value="cubic">Cubic: f(x) = x³</option>
+                            <option value="sin">Sin: f(x) = sin(x)</option>
+                            <option value="doublewell">Double-well: f(x) = x⁴ − x²</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="learning-rate">Learning Rate:</label>
+                        <input type="range" id="learning-rate" min="0.01" max="0.3" step="0.01" value="0.03">
+                        <span id="lr-value">0.03</span>
+                    </div>
+
+                    <div class="buttons">
+                        <button id="start-btn">Start</button>
+                        <button id="reset-btn">Reset</button>
+                    </div>
+                </div>
+
+                <div class="visualization">
+                    <svg id="plot" width="400" height="300">
+                        <polyline id="curve" fill="none" stroke="black"/>
+                        <circle id="point" r="4" fill="red"/>
+                    </svg>
+                </div>
+
+                <div class="info-panel">
+                    <div id="status">Ready to start</div>
+                    <div id="info">x = 2.000 | loss = 4.000</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <h3>Mathematical Explanation</h3>
+        <p><strong>Gradient descent</strong> updates a variable x using:</p>
+        <p style="font-family: monospace; background: #f5f5f5; padding: 10px; border-radius: 5px; margin: 10px 0;">
+            x ← x − η ∇f(x)
+        </p>
+        <p>where η is the learning rate and ∇f(x) is the derivative.</p>
+
+        <p style="margin-top: 20px;"><strong>Behavior:</strong></p>
+        <ul>
+            <li>Convex functions (like x²) converge to global minimum</li>
+            <li>Non-convex functions (like x⁴ − x²) have multiple minima</li>
+            <li>Result depends on initialization and learning rate</li>
+        </ul>
+
+        <h3>Current Status</h3>
+        <div id="math-status" style="background: #e8f4fd; padding: 10px; border-radius: 5px;">
+            Select a function and press Start to begin optimization.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
